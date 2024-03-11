@@ -1586,8 +1586,7 @@ void ChargePointImpl::handleRemoteStartTransactionRequest(ocpp::Call<RemoteStart
             continue;
         }
 
-        if (this->transaction_handler->get_transaction(connector) != nullptr ||
-            this->status->get_state(connector) == ChargePointStatus::Finishing) {
+        if (this->transaction_handler->get_transaction(connector) != nullptr) {
             obtainable = false;
             continue;
         }
